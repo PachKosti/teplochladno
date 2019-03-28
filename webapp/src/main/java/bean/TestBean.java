@@ -1,5 +1,6 @@
 package bean;
 
+import entity.Order;
 import service.TestSvc;
 
 import javax.annotation.PostConstruct;
@@ -17,9 +18,12 @@ public class TestBean {
 
     private String kokot;
 
+    private Order order;
+
     @PostConstruct
     private void init(){
         kokot = "ide dopredu";
+        order = testSvc.findOrder(1L);
     }
 
     public String getKokot() {
