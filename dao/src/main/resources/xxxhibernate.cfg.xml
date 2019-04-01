@@ -18,6 +18,8 @@
         <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
         <property name="hibernate.connection.datasource">java:/teplochladnoDS</property>
         <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hibernate.format_sql">true</property>
 
         <!-- SQL Dialect -->
         <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL95Dialect</property>
@@ -27,14 +29,14 @@
         <property name="current_session_context_class">thread</property>
 
         <!-- Drop and re-create the database schema on startup -->
-        <property name="hibernate.hbm2ddl.auto">update</property>
-        <property name="hibernate.hibernate.format_sql">true</property>
+
 
         <property name="hibernate.transaction.jta.platform">org.hibernate.service.jta.platform.internal.JOTMJtaPlatform</property>
         <property name="hibernate.transaction.factory_class">org.hibernate.engine.transaction.internal.jta.JtaTransactionFactory</property>
         <property name="hibernate.current_session_context_class">jta</property>
+        <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JTATransactionFactory</property>
 
-        <mapping class="entity.Order"/>
+        <mapping class="entity.Zakazka"/>
     </session-factory>
 
 </hibernate-configuration>

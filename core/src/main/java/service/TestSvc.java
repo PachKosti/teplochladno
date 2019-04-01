@@ -1,6 +1,6 @@
 package service;
 
-import entity.Order;
+import entity.Zakazka;
 
 import javax.ejb.Local;
 
@@ -9,5 +9,7 @@ public interface TestSvc {
 
     Integer getRandom();
 
-    Order findOrder(Long id);
-}
+    Zakazka findOrder(Long id);
+
+    void insertZakazka(Zakazka zakazka);
+    }

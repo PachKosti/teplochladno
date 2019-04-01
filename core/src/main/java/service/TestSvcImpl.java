@@ -1,20 +1,19 @@
 package service;
 
-import entity.Order;
-import org.hibernate.Session;
-import org.hibernate.query.Query;
-import util.HibernateUtil;
+import entity.Zakazka;
 
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
+import java.util.List;
 import java.util.Random;
 
 @Stateless
 public class TestSvcImpl implements TestSvc {
 
-    @PersistenceContext
+    @PersistenceContext(unitName = "mainPU")
     private EntityManager em;
 
     public Integer getRandom() {
@@ -22,12 +21,16 @@ public class TestSvcImpl implements TestSvc {
         return random.nextInt();
     }
 
-    public Order findOrder(Long id){
+    public Zakazka findOrder(Long id){
         //Session session = HibernateUtil.getSessionFactory().openSession();
 
-        TypedQuery<Order> query = em.createQuery("Select o from Order o  where o.id = :id", Order.class);
-        query.setParameter("id", 1);
-        Order order = (Order) query.getSingleResult();
-        return order;
+        Query query = em.createQuery("Select o from Zakazka o ");
+        //query.setParameter("id", id);
+        List<Zakazka> zakazka =  query.getResultList();
+        return zakazka.get(0);
+    }
+
+    public void insertZakazka(Zakazka zakazka){
+        em.persist(zakazka);
     }
 }

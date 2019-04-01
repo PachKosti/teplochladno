@@ -1,12 +1,11 @@
 package bean;
 
-import entity.Order;
+import entity.Zakazka;
 import service.TestSvc;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ViewScoped;
-import javax.faces.event.NamedEvent;
 import javax.inject.Named;
 
 @Named
@@ -18,12 +17,23 @@ public class TestBean {
 
     private String kokot;
 
-    private Order order;
+    private Zakazka zakazka;
 
     @PostConstruct
     private void init(){
         kokot = "ide dopredu";
-        order = testSvc.findOrder(1L);
+
+    }
+
+    public void createZakazka(){
+        Zakazka z = new Zakazka();
+        Long l = new Long("2126");
+
+        z.setId(l);
+        z.setName("jaaj");
+        testSvc.insertZakazka(z);
+        System.out.println("ffr");
+        //zakazka = testSvc.findOrder(l);
     }
 
     public String getKokot() {
