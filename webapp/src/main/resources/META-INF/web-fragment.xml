@@ -12,35 +12,35 @@
     </context-param>
     <error-page>
         <error-code>403</error-code>
-        <location>/403.xhtml</location>
+        <location>/resources/403.xhtml</location>
     </error-page>
     <error-page>
         <exception-type>template.exception.AccessDeniedException</exception-type>
-        <location>/403.xhtml</location>
+        <location>/resources/403.xhtml</location>
     </error-page>
     <error-page>
         <exception-type>javax.ejb.AccessLocalException</exception-type>
-        <location>/403.xhtml</location>
+        <location>/resources/403.xhtml</location>
     </error-page>
     <error-page>
         <error-code>404</error-code>
-        <location>/404.xhtml</location>
+        <location>/resources/404.xhtml</location>
     </error-page>
     <error-page>
         <error-code>500</error-code>
-        <location>/500.xhtml</location>
+        <location>/resources/500.xhtml</location>
     </error-page>
     <error-page>
         <exception-type>java.lang.Throwable</exception-type>
-        <location>/500.xhtml</location>
+        <location>/resources/500.xhtml</location>
     </error-page>
     <error-page>
         <exception-type>javax.faces.application.ViewExpiredException</exception-type>
-        <location>/expired.xhtml</location>
+        <location>/resources/expired.xhtml</location>
     </error-page>
     <error-page>
         <exception-type>javax.persistence.OptimisticLockException</exception-type>
-        <location>/optimistic.xhtml</location>
+        <location>/resources/optimistic.xhtml</location>
     </error-page>
 
     <listener>

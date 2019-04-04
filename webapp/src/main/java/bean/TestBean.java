@@ -27,7 +27,7 @@ public class TestBean {
 
     public void createZakazka(){
         Zakazka z = new Zakazka();
-        Long l = new Long("2126");
+        Long l = new Long("21226");
 
         z.setId(l);
         z.setName("jaaj");
